@@ -17,7 +17,7 @@ export class App extends Component {
   }
 
   componentDidMount () {
-    const socket = socketIOClient('http://localhost:3000/')
+    const socket = socketIOClient('https://algo8-backend.herokuapp.com/')
 
     socket.on('connect', () => {
       socket.on('newTweet', (tweet) => {
