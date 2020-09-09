@@ -9,16 +9,17 @@ let io = socketIO(server)
 app.use(express.json())
 
 let Twit = require('twit')
+const port = process.env.PORT || 5000;
 
 let T = new Twit({
-  consumer_key: '',
-  consumer_secret: '',
-  access_token: '',
-  access_token_secret: ''
+  consumer_key: "8ea2ciaz4l0fz0W1JUTSt8o2P",
+  consumer_secret: "lAWw8jc9JAXuPsdqoXaflQVi21BBbe0Yu1sKsRVWT6iPBurOsE",
+  access_token: "3426232066-U4lzezcgndjlkinQjz0CXFoVefahZOMHvMlQgkF",
+  access_token_secret: "G7pUIHMokU4x303nTtVY3JL3jJdd95Fmu7e6GwQyywfPQ",
 })
 
 let twitterStream
-let searchTerm = 'js'
+let searchTerm = 'Javascript'
 
 const startTwitterStream = () => {
   if (twitterStream == null) {
@@ -57,7 +58,7 @@ io.on('connection', (socket) => {
   })
 })
 
-module.exports.server = server.listen(3001, () => {
-  console.log('Server is up on port 3001')
+module.exports.server = server.listen(port, () => {
+  console.log(`Server is up on port ${port}`)
 })
 module.exports.app = app
