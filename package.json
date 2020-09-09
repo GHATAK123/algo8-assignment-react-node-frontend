@@ -17,9 +17,9 @@
     "socket.io-client": "^2.2.0",
     "twit": "^2.2.11"
   },
-  "proxy": "http://localhost:5000",
+  "proxy": "https://alog8-backend.herokuapp.com/",
   "scripts": {
-    "start": "concurrently 'node server/server.js' 'react-scripts start'",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
